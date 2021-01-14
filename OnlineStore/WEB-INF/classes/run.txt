@@ -1,0 +1,7 @@
+javac Register.java -classpath /usr/share/java/mysql-connector-java-8.0.21.jar:/usr/share/java/servlet-api.jar
+
+javac Login.java -classpath /usr/share/java/mysql-connector-java-8.0.21.jar:/usr/share/java/servlet-api.jar
+
+mysql -u root -p
+
+
