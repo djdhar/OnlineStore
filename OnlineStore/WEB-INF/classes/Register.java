@@ -29,12 +29,7 @@ public class Register extends HttpServlet {
         String preference = request.getParameter("preference");
         String password = request.getParameter("password");
 
-      final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-      final String DB_URL="jdbc:mysql://localhost:3306/ONLINESTORE";
-
-      //  Database credentials
-      final String USER = "root";
-      final String PASS = "Ddhar@16";
+   
         
         out.println("<h1>" + UserName + "</h1>");
         out.println("<h1>" + Name + "</h1>");
@@ -44,11 +39,7 @@ public class Register extends HttpServlet {
         out.println("<h1>" + password + "</h1>");
 
         try {
-            // Register JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
-   
-            // Open a connection
-            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Connection con=(Connection)getServletConfig().getServletContext().getAttribute("ONLINESTORE");
    
             // Execute SQL query
             Statement stmt = conn.createStatement();

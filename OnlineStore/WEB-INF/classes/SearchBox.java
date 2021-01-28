@@ -70,12 +70,7 @@ public class SearchBox extends HttpServlet {
         String Password = request.getParameter("password");
         String searchTerm = request.getParameter("Search");
 
-        final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-        final String DB_URL="jdbc:mysql://localhost:3306/ONLINESTORE";
-  
-        //  Database credentials
-        final String USER = "root";
-        final String PASS = "Ddhar@16";
+       
 
 
         
@@ -83,8 +78,7 @@ public class SearchBox extends HttpServlet {
         out.println("<h1>" + Password + "</h1>");
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Connection con=(Connection)getServletConfig().getServletContext().getAttribute("ONLINESTORE");
 
             Statement stmt = conn.createStatement();
             String sql;

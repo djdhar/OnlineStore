@@ -56,5 +56,21 @@
         <url-pattern>/SearchBox</url-pattern>
     </servlet-mapping>
 
+    <context-param>
+        <param-name>ONLINESTORE</param-name>
+        <param-value>jdbc:mysql://localhost:3306/ONLINESTORE</param-value>
+    <context-param>
+
+     <context-param>
+        <param-name>ONLINESTOREUser</param-name>
+        <param-value>root</param-value>
+    <context-param>
+
+     <context-param>
+        <param-name>ONLINESTOREPwd</param-name>
+        <param-value>12345</param-value>
+    <context-param>
+
+
 
 </web-app>

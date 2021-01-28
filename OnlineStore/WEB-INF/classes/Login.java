@@ -66,15 +66,7 @@ public class Login extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        String UserName = request.getParameter("Username");
-        String Password = request.getParameter("password");
-
-        final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-        final String DB_URL="jdbc:mysql://localhost:3306/ONLINESTORE";
-  
-        //  Database credentials
-        final String USER = "root";
-        final String PASS = "Ddhar@16";
+      
 
 
         
@@ -82,8 +74,7 @@ public class Login extends HttpServlet {
         out.println("<h1>" + Password + "</h1>");
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Connection con=(Connection)getServletConfig().getServletContext().getAttribute("ONLINESTORE");
 
             Statement stmt = conn.createStatement();
             String sql;
